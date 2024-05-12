@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           bottom: 40,
                         ),
                         child: Image.asset(
@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       TabBar(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
                         dividerColor: Colors.transparent,
                         indicator: const UnderlineTabIndicator(
                           borderSide: BorderSide(
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             LoginView(),
             SignUpView(),

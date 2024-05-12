@@ -100,7 +100,7 @@ class LandingPage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LoginScreen(),
+                            builder: (context) => const LoginScreen(),
                           ));
                     },
                     child: Container(
@@ -115,7 +115,7 @@ class LandingPage extends StatelessWidget {
                           "Get started",
                           style: CustomFontStyle.semiBoldText.copyWith(
                             fontSize: 17,
-                            color: Color.fromRGBO(255, 70, 10, 1),
+                            color: const Color.fromRGBO(255, 70, 10, 1),
                           ),
                         ),
                       ),

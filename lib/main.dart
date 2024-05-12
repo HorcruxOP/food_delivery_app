@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Food Delivery App",
-      home: LandingPage(),
+      home: const LandingPage(),
       theme: ThemeData(
         fontFamily: "SFProDisplay",
       ),
