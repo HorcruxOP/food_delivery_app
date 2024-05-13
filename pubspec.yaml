@@ -89,6 +89,8 @@ flutter:
           weight: 900
         - asset: assets/fonts/SF-Pro-Rounded-Semibold.otf
           weight: 600
+        - asset: assets/fonts/SF-Pro-Rounded-Bold.otf
+          weight: 700
         - asset: assets/fonts/SF-Pro-Rounded-Regular.otf
   #   - family: Trajan Pro
   #     fonts:

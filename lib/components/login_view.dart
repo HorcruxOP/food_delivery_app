@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/custom_font_style.dart';
 
+import 'package:food_delivery_app/pages/main_screen.dart';
+
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -54,7 +56,13 @@ class LoginView extends StatelessWidget {
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.16),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MainScreen(),
+                  ));
+            },
             child: Container(
               height: 70,
               width: 314,

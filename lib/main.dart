@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:food_delivery_app/pages/landing_page.dart';
 
 void main() {

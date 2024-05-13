@@ -28,4 +28,8 @@ class CustomFontStyle {
     fontFamily: _fontFamilyRounded,
     fontWeight: FontWeight.normal,
   );
+  static TextStyle boldRounded = const TextStyle(
+    fontFamily: _fontFamilyRounded,
+    fontWeight: FontWeight.w700,
+  );
 }
