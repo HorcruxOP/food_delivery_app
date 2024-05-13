@@ -9,11 +9,6 @@ class HistoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: GestureDetector(
-          child: Container(
-              margin: const EdgeInsets.only(left: 30),
-              child: Image.asset("assets/images/chevron-left.png")),
-        ),
         centerTitle: true,
         title: Text(
           "History",

@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/custom_font_style.dart';
+import 'package:food_delivery_app/pages/landing_page.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -17,15 +20,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(245, 245, 248, 1),
         automaticallyImplyLeading: false,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Container(
-            margin: const EdgeInsets.only(left: 30),
-            child: Image.asset("assets/images/chevron-left.png"),
-          ),
-        ),
         centerTitle: true,
         title: Text(
           "My profile",
@@ -33,9 +27,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
             fontSize: 18,
           ),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: IconButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LandingPage(),
+                    ),
+                    (route) => false);
+              },
+              icon: Icon(Icons.logout),
+            ),
+          ),
+        ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(50.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

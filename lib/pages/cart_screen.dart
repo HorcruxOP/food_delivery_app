@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/custom_font_style.dart';
+import 'package:food_delivery_app/pages/main_screen.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -14,13 +15,13 @@ class CartScreen extends StatelessWidget {
             Navigator.pop(context);
           },
           child: Container(
-            margin: EdgeInsets.only(left: 30),
+            margin: const EdgeInsets.only(left: 30),
             child: Image.asset("assets/images/chevron-left.png"),
           ),
         ),
         centerTitle: true,
         title: Text(
-          "History",
+          "Orders",
           style: CustomFontStyle.semiBoldText.copyWith(
             fontSize: 18,
           ),
@@ -32,14 +33,14 @@ class CartScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/empty-history.png",
+              "assets/images/Group 66.png",
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
-              "No history yet",
+              "No orders yet",
               style: CustomFontStyle.semiBoldText.copyWith(fontSize: 28),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               "Hit the orange button down\nbelow to Create an order",
               style: CustomFontStyle.regularText.copyWith(
@@ -51,6 +52,13 @@ class CartScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.27,
             ),
             GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MainScreen(),
+                    ));
+              },
               child: Container(
                 height: 70,
                 width: 314,
@@ -60,7 +68,7 @@ class CartScreen extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "Login",
+                    "Start Ordering",
                     style: CustomFontStyle.semiBoldText.copyWith(
                       fontSize: 17,
                       color: Colors.white,
@@ -69,7 +77,7 @@ class CartScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
           ],
         ),
       ),

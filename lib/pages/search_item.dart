@@ -9,15 +9,6 @@ class SearchItem extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Container(
-            margin: EdgeInsets.only(left: 30),
-            child: Image.asset("assets/images/chevron-left.png"),
-          ),
-        ),
         centerTitle: true,
         title: Text(
           "",
