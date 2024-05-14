@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/custom_font_style.dart';
 import 'package:food_delivery_app/pages/landing_page.dart';
@@ -16,9 +15,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(245, 245, 248, 1),
+      backgroundColor: const Color.fromRGBO(245, 245, 248, 1),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(245, 245, 248, 1),
+        backgroundColor: const Color.fromRGBO(245, 245, 248, 1),
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
@@ -36,11 +35,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LandingPage(),
+                      builder: (context) => const LandingPage(),
                     ),
                     (route) => false);
               },
-              icon: Icon(Icons.logout),
+              icon: const Icon(Icons.logout),
             ),
           ),
         ],
@@ -56,7 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 fontSize: 18,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Container(
               width: 315,
               height: 133,
@@ -112,18 +111,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Text(
               "Payment Method",
               style: CustomFontStyle.semiBoldText.copyWith(
                 fontSize: 18,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Container(
               width: 315,
               height: 231,
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 left: 0,
                 top: 10,
               ),
@@ -137,7 +136,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: Row(
                       children: [
                         Radio(
-                          activeColor: Color.fromRGBO(255, 70, 10, 1),
+                          activeColor: const Color.fromRGBO(255, 70, 10, 1),
                           value: 1,
                           groupValue: _selectedValue,
                           onChanged: (value) {
@@ -151,12 +150,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 35,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Color.fromRGBO(255, 70, 10, 1),
+                            color: const Color.fromRGBO(255, 70, 10, 1),
                           ),
                           child: Image.asset(
                               "assets/images/bi_credit-card-2-front-fill.png"),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Text(
                           "Card",
                           style: CustomFontStyle.regularText.copyWith(
@@ -171,7 +170,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: Row(
                       children: [
                         Radio(
-                          activeColor: Color.fromRGBO(255, 70, 10, 1),
+                          activeColor: const Color.fromRGBO(255, 70, 10, 1),
                           value: 2,
                           groupValue: _selectedValue,
                           onChanged: (value) {
@@ -185,12 +184,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 35,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Color.fromRGBO(235, 71, 150, 1),
+                            color: const Color.fromRGBO(235, 71, 150, 1),
                           ),
                           child:
                               Image.asset("assets/images/dashicons_bank.png"),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Text(
                           "Bank Account",
                           style: CustomFontStyle.regularText.copyWith(
@@ -205,7 +204,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: Row(
                       children: [
                         Radio(
-                          activeColor: Color.fromRGBO(255, 70, 10, 1),
+                          activeColor: const Color.fromRGBO(255, 70, 10, 1),
                           value: 3,
                           groupValue: _selectedValue,
                           onChanged: (value) {
@@ -219,11 +218,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 35,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Color.fromRGBO(0, 56, 255, 1),
+                            color: const Color.fromRGBO(0, 56, 255, 1),
                           ),
                           child: Image.asset("assets/images/cib_paypal.png"),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Text(
                           "Paypal",
                           style: CustomFontStyle.regularText.copyWith(

@@ -48,7 +48,7 @@ class _SignUpViewState extends State<SignUpView> {
                   borderSide: BorderSide(color: Colors.grey),
                 ),
               ),
-              key: ValueKey("email"),
+              key: const ValueKey("email"),
               validator: (value) {
                 if (!(value.toString().contains("@"))) {
                   return "Invalid Email";
@@ -86,7 +86,7 @@ class _SignUpViewState extends State<SignUpView> {
                     borderSide: BorderSide(color: Colors.grey),
                   ),
                 ),
-                key: ValueKey("password"),
+                key: const ValueKey("password"),
                 validator: (value) {
                   if (value.toString().length < 6) {
                     return "Password is too small";
@@ -116,7 +116,7 @@ class _SignUpViewState extends State<SignUpView> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MainScreen(),
+                        builder: (context) => const MainScreen(),
                       ),
                       (route) => false);
                 }

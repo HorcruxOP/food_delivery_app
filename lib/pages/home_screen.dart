@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:food_delivery_app/components/item_tabbar_list.dart';
 import 'package:food_delivery_app/constants/custom_font_style.dart';
 import 'package:food_delivery_app/pages/cart_screen.dart';
@@ -35,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const CartScreen(),
+                          builder: (context) =>  CartScreen(),
                         ));
                   },
                   child: Image.asset("assets/images/shopping-cart.png")),
@@ -131,13 +130,30 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 20),
             const SizedBox(
               height: 320,
-              child: TabBarView(children: [
-                ItemTabBarList(),
-                ItemTabBarList(),
-                ItemTabBarList(),
-                ItemTabBarList(),
-                ItemTabBarList(),
-              ]),
+              child: TabBarView(
+                children: [
+                  ItemTabBarList(
+                    docName: "Foods",
+                    listName: "FoodsList",
+                  ),
+                  ItemTabBarList(
+                    docName: "Foods",
+                    listName: "FoodsList",
+                  ),
+                  ItemTabBarList(
+                    docName: "Foods",
+                    listName: "FoodsList",
+                  ),
+                  ItemTabBarList(
+                    docName: "Foods",
+                    listName: "FoodsList",
+                  ),
+                  ItemTabBarList(
+                    docName: "Foods",
+                    listName: "FoodsList",
+                  ),
+                ],
+              ),
             )
           ],
         ),

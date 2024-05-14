@@ -1,8 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/firebase_options.dart';
-
 import 'package:food_delivery_app/pages/landing_page.dart';
+import 'package:food_delivery_app/pages/main_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Food Delivery App",
-      home: const LandingPage(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return const MainScreen();
+          } else {
+            return const LandingPage();
+          }
+        },
+      ),
       theme: ThemeData(
         fontFamily: "SFProDisplay",
       ),
