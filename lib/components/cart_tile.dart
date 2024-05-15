@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/custom_font_style.dart';
 import 'package:food_delivery_app/functions/cartFunctions.dart';
@@ -18,8 +19,6 @@ class CartTile extends StatefulWidget {
 }
 
 class _CartTileState extends State<CartTile> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -41,7 +40,7 @@ class _CartTileState extends State<CartTile> {
                 decoration: BoxDecoration(
                   color: Colors.black,
                   image: DecorationImage(
-                    image: NetworkImage(widget.imageUrl),
+                    image: CachedNetworkImageProvider(widget.imageUrl),
                     fit: BoxFit.cover,
                   ),
                   shape: BoxShape.circle,

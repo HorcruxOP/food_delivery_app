@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/custom_font_style.dart';
@@ -59,7 +60,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                 height: 240,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(
+                    image: CachedNetworkImageProvider(
                       widget.imageUrl,
                     ),
                     fit: BoxFit.cover,
@@ -131,7 +132,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => CartScreen(),
+                              builder: (context) => const CartScreen(),
                             ),
                           );
                         },
@@ -161,7 +162,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => CartScreen(),
+                              builder: (context) => const CartScreen(),
                             ),
                           );
                         },

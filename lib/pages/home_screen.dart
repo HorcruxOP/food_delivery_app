@@ -34,10 +34,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>  CartScreen(),
+                          builder: (context) => CartScreen(),
                         ));
                   },
-                  child: Image.asset("assets/images/shopping-cart.png")),
+                  child: Image.asset(
+                    "assets/images/shopping-cart.png",
+                    height: 30,
+                    width: 30,
+                  )),
             ),
           ],
         ),

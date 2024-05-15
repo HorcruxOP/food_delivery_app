@@ -110,16 +110,27 @@ class _LoginViewState extends State<LoginView> {
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.16),
             GestureDetector(
-              onTap: () {
+              onTap: () async {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  signIn(emailAddress, password);
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MainScreen(),
-                    ),
-                    (route) => false);
+                  try {
+                    final user = await signIn(emailAddress, password);
+                    if (user != null) {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MainScreen(),
+                          ),
+                          (route) => false);
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("User doesn't exist")));
+                    }
+                  } catch (e) {
+                    print(e);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("Invalid Credentials")));
+                  }
                 }
               },
               child: Container(

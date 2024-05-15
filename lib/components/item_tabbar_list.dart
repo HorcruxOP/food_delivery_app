@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/custom_font_style.dart';
@@ -96,7 +97,7 @@ class ItemTabBarList extends StatelessWidget {
                           height: 150,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: NetworkImage(
+                              image: CachedNetworkImageProvider(
                                 finalData["image"],
                               ),
                               fit: BoxFit.cover,
@@ -113,7 +114,10 @@ class ItemTabBarList extends StatelessWidget {
             },
           );
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+              child: CircularProgressIndicator(
+            color: const Color.fromRGBO(255, 70, 10, 1),
+          ));
         }
       },
     );

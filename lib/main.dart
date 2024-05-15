@@ -6,7 +6,8 @@ import 'package:food_delivery_app/pages/landing_page.dart';
 import 'package:food_delivery_app/pages/main_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+WidgetsFlutterBinding.ensureInitialized();
+ 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

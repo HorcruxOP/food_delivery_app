@@ -14,10 +14,10 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 0;
   final selectedPage = [
-    HomeScreen(),
-    SearchItem(),
-    ProfileScreen(),
-    HistoryScreen(),
+    const HomeScreen(),
+    const SearchItem(),
+    const ProfileScreen(),
+    const HistoryScreen(),
   ];
   indexSelected(int index) {
     setState(() {
